@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <preConditions onFail="WARN">
+        <tableExists tableName="halls"/>
+        <tableIsEmpty tableName="halls"/>
+    </preConditions>
+
+    <changeSet id="fill-table-halls" author="alexeyvalyuk">
+        <insert tableName="halls">
+            <column name="name" value="Small Hall"/>
+            <column name="capacity" value="60"/>
+            <column name="cinema_id" value="1"/>
+        </insert>
+        <insert tableName="halls">
+            <column name="name" value="Average Hall"/>
+            <column name="capacity" value="80"/>
+            <column name="cinema_id" value="1"/>
+        </insert>
+        <insert tableName="halls">
+            <column name="name" value="Big Hall"/>
+            <column name="capacity" value="100"/>
+            <column name="cinema_id" value="2"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

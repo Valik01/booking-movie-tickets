@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <preConditions onFail="WARN">
+        <tableExists tableName="sessions"/>
+        <tableIsEmpty tableName="sessions"/>
+    </preConditions>
+
+    <changeSet id="fill-table-sessions" author="alexeyvalyuk">
+        <insert tableName="sessions">
+            <column name="hall_id" value="1"/>
+            <column name="movie_id" value="1"/>
+            <column name="start_date_time" value="2022-04-15T15:00:00"/>
+            <column name="end_date_time" value="2022-04-15T17:30:00"/>
+        </insert>
+        <insert tableName="sessions">
+            <column name="hall_id" value="1"/>
+            <column name="movie_id" value="3"/>
+            <column name="start_date_time" value="2022-06-15T15:00:00"/>
+            <column name="end_date_time" value="2022-06-15T17:30:00"/>
+        </insert>
+        <insert tableName="sessions">
+            <column name="hall_id" value="2"/>
+            <column name="movie_id" value="2"/>
+            <column name="start_date_time" value="2022-04-15T18:00:00"/>
+            <column name="end_date_time" value="2022-04-15T22:30:00"/>
+        </insert>
+        <insert tableName="sessions">
+            <column name="hall_id" value="3"/>
+            <column name="movie_id" value="3"/>
+            <column name="start_date_time" value="2022-04-15T16:00:00"/>
+            <column name="end_date_time" value="2022-04-15T18:30:00"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

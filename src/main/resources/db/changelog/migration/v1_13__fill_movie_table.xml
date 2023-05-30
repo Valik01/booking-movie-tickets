@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <preConditions onFail="WARN">
+        <tableExists tableName="movies"/>
+        <tableIsEmpty tableName="movies"/>
+    </preConditions>
+
+    <changeSet id="fill-table-movies" author="alexeyvalyuk">
+        <insert tableName="movies">
+            <column name="name" value="Green mile"/>
+            <column name="description" value="Movie green mile"/>
+        </insert>
+        <insert tableName="movies">
+            <column name="name" value="Spider-man"/>
+            <column name="description" value="Movie Spider-man"/>
+        </insert>
+        <insert tableName="movies">
+            <column name="name" value="The Shawshank Redemption"/>
+            <column name="description" value="Movie The Shawshank Redemption"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

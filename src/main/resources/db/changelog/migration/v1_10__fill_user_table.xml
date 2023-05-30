@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <preConditions onFail="WARN">
+        <tableExists tableName="users"/>
+        <tableIsEmpty tableName="users"/>
+    </preConditions>
+
+    <changeSet id="fill-table-users" author="alexeyvalyuk">
+        <insert tableName="users">
+            <column name="name" value="Ivan"/>
+            <column name="surname" value="Ivanov"/>
+            <column name="login" value="Ivanov2000"/>
+            <column name="password" value="$2a$12$gad24vYUMb7Wdj4BE8/HO..FwlYPOhFfk5RDLZLsxu/UhHV6yKC9m"/>
+            <column name="email" value="ivanov@email.com"/>
+            <column name="phone" value="+375290001122"/>
+            <column name="discount" value="10"/>
+            <column name="system_role" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Petr"/>
+            <column name="surname" value="Petrov"/>
+            <column name="login" value="Petrov2001"/>
+            <column name="password" value="$2a$12$xTFsP.2WsVtnGLmDmTWaWeFS7nk5cVMENpInaljUS58shHe6JNniS"/>
+            <column name="email" value="petrov@email.com"/>
+            <column name="phone" value="+375291110099"/>
+            <column name="discount" value="5"/>
+            <column name="system_role" value="2"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Vasia"/>
+            <column name="surname" value="Pupkin"/>
+            <column name="login" value="Pupkin2002"/>
+            <column name="password" value="$2a$12$LOVw.F9IyPeuMvrDjdoD0.fA4i.4IWMzHEGZIOh5V5H4UFjgd3476"/>
+            <column name="email" value="pupkin@email.com"/>
+            <column name="phone" value="+375290001199"/>
+            <column name="discount" value="0"/>
+            <column name="system_role" value="2"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

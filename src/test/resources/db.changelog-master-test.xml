@@ -1,0 +1,17 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <include file="db//changelog//migration//v1_1__add_role_table.xml" relativeToChangelogFile="true"/>
+    <include file="db//changelog//migration//v1_2__add_user_table.xml" relativeToChangelogFile="true"/>
+    <include file="db//changelog//migration//v1_3__add_cinemas_table.xml" relativeToChangelogFile="true"/>
+    <include file="db//changelog//migration//v1_4__add_hall_table.xml" relativeToChangelogFile="true"/>
+    <include file="db//changelog//migration//v1_5__add_movie_table.xml" relativeToChangelogFile="true"/>
+    <include file="db//changelog//migration//v1_6__add_session_table.xml" relativeToChangelogFile="true"/>
+    <include file="db//changelog//migration//v1_7__add_ticket_table.xml" relativeToChangelogFile="true"/>
+    <include file="db//changelog//migration//v1_8__add_weather_table.xml" relativeToChangelogFile="true"/>
+    <include file="db//changelog//migration//v1_9__fill_role_table.xml" relativeToChangelogFile="true"/>
+    <include file="db//changelog//migration//v1_16__add_audit_table.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

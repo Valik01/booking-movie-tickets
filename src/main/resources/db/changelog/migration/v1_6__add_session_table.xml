@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <preConditions onFail="WARN">
+        <tableExists tableName="halls"/>
+        <tableExists tableName="movies"/>
+    </preConditions>
+
+    <changeSet id="create-table-sessions" author="alexeyvalyuk">
+        <createTable tableName="sessions">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="hall_id" type="int">
+                <constraints foreignKeyName="fk_sessions_halls"
+                             references="halls(id)" nullable="false"/>
+            </column>
+            <column name="movie_id" type="int">
+                <constraints foreignKeyName="fk_sessions_movies"
+                             references="movies(id)" nullable="false"/>
+            </column>
+            <column name="start_date_time" type="datetime"/>
+            <column name="end_date_time" type="datetime"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

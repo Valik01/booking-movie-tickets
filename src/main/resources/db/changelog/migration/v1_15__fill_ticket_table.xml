@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <preConditions onFail="WARN">
+        <tableExists tableName="tickets"/>
+        <tableIsEmpty tableName="tickets"/>
+    </preConditions>
+
+    <changeSet id="fill-table-tickets" author="alexeyvalyuk">
+        <insert tableName="tickets">
+            <column name="session_id" value="1"/>
+            <column name="raw" value="1"/>
+            <column name="seat" value="1"/>
+            <column name="price" value="10"/>
+        </insert>
+        <insert tableName="tickets">
+            <column name="session_id" value="1"/>
+            <column name="raw" value="1"/>
+            <column name="seat" value="2"/>
+            <column name="price" value="10"/>
+        </insert>
+        <insert tableName="tickets">
+            <column name="session_id" value="2"/>
+            <column name="raw" value="1"/>
+            <column name="seat" value="1"/>
+            <column name="price" value="15"/>
+        </insert>
+        <insert tableName="tickets">
+            <column name="session_id" value="2"/>
+            <column name="raw" value="1"/>
+            <column name="seat" value="2"/>
+            <column name="price" value="15"/>
+        </insert>
+        <insert tableName="tickets">
+            <column name="session_id" value="3"/>
+            <column name="raw" value="1"/>
+            <column name="seat" value="1"/>
+            <column name="price" value="20"/>
+        </insert>
+        <insert tableName="tickets">
+            <column name="session_id" value="3"/>
+            <column name="raw" value="1"/>
+            <column name="seat" value="2"/>
+            <column name="price" value="20"/>
+        </insert>
+        <insert tableName="tickets">
+            <column name="session_id" value="4"/>
+            <column name="raw" value="1"/>
+            <column name="seat" value="1"/>
+            <column name="price" value="20"/>
+        </insert>
+        <insert tableName="tickets">
+            <column name="session_id" value="4"/>
+            <column name="raw" value="1"/>
+            <column name="seat" value="2"/>
+            <column name="price" value="20"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
