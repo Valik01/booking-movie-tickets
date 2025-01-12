@@ -1,4 +1,4 @@
-# App for booking movie tickets
+# App for booking movie tickets - Backend part
 
 ### Tech stack
 * Spring Framework (Boot, Data, MVC, Security, AOP)
